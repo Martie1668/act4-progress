@@ -1,3 +1,4 @@
+
 <?php require_once 'core/dbConfig.php'; ?>
 <?php require_once 'core/models.php'; ?>
 <!DOCTYPE html>
@@ -25,12 +26,13 @@
 	</form>
 	<?php $getallchef = getallchef($pdo); ?>
 	<?php foreach ($getallchef as $row) { ?>
-	<div class="container" style="border-style: solid; width: 50%; height: 300px; margin-top: 20px;">
+	<div class="container" style="border-style: solid; width: 50%; height: 180px; margin-top: 20px;">
 		<h3>Chef Name: <?php echo $row['chefname']; ?></h3>
 		<h3>Specialization: <?php echo $row['specialization']; ?></h3>
+        <h3>Date Added: <?php echo $row['date_added']; ?></h3>
 
 		<div class="editAndDelete" style="float: right; margin-right: 20px;">
-			<a href="viewrecipe.php?chefid=<?php echo $row['chefid']; ?>">View Projects</a>
+			<a href="viewrecipe.php?chefid=<?php echo $row['chefid']; ?>">View recipe</a>
 			<a href="editchef.php?chefid=<?php echo $row['chefid']; ?>">Edit</a>
 			<a href="deletechef.php?chefid=<?php echo $row['chefid']; ?>">Delete</a>
 		</div>
